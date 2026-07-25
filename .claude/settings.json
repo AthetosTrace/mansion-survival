@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Task|Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py",
+            "args": ["-3", ".claude/hooks/entry_gate.py"]
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "designer|developer|inspector",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py",
+            "args": ["-3", ".claude/hooks/exit_gate.py"]
+          }
+        ]
+      }
+    ]
+  }
+}
