@@ -1,0 +1,15 @@
+# Python (gate hooks in .claude/hooks/)
+__pycache__/
+*.py[cod]
+
+# Unreal Engine generated
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio
+*.sln
+*.suo
+.vs/
