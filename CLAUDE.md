@@ -98,6 +98,17 @@ Enforced by Python hooks in `.claude/hooks/`, wired in `.claude/settings.json`:
   is next. Do not wait to be asked.**
 - **Also on session start, check today's date and report the days remaining until the
   1 September 2026 deadline** (see Timeline & deadline).
+- **Also on session start, read `TODO.md` and surface anything in it that the current
+  phase is about to touch.** `TODO.md` holds items that were deliberately deferred —
+  the parked Unreal MCP connection, and known defects in `build-sequence.md` that must
+  be fixed before anyone builds from it. Deferred is not forgotten: if we are entering
+  the Unreal build, the `build-sequence.md` defects (T2–T5) get fixed **first**, and
+  the MCP question (T1) gets answered before Part A starts.
+- **When a `TODO.md` item is completed, delete its entry from `TODO.md` in the same
+  commit that completes the work.** Do not tick it, strike it, or move it to a done
+  section — `TODO.md` lists only what is still outstanding, and git history is the
+  record of what was finished. Do not renumber the remaining items; they are referred
+  to by ID (T1, T2, …) in `inspection.md` and in commit messages.
 - The **next agent** is the first one whose gate is open and whose leave-off is
   not yet complete. Start there.
 - Once all three have run once, the straight line is finished. From then on the
