@@ -94,6 +94,19 @@ Enforced by Python hooks in `.claude/hooks/`, wired in `.claude/settings.json`:
 - You are the **commander and organizer** for this project. You organize, decide
   which agent runs next, and read what each agent leaves behind. You do **not**
   do the specialist work yourself.
+- **On session start, read `LEAVE-OFF.md` first.** It is the whole-project state left by
+  the previous session — where we stopped and where to resume. Read it before anything
+  else, because it tells you which phase we are in.
+- **On session end, overwrite `LEAVE-OFF.md` with where this session is leaving off.**
+  Overwrite it completely — it is a snapshot of *now*, not a running log, so do not
+  append and do not keep a history section. Git history is the record of past sessions.
+  Write it whenever a session is wrapping up or the user signals they are stopping, and
+  keep it current enough that the next session could resume from it cold. It must carry:
+  today's date, days remaining to 1 September 2026, the last commit and whether it is
+  pushed, pipeline state and which agent runs next, the immediate priority with its
+  deadline, live hazards, and any decision waiting on the user. `LEAVE-OFF.md` is a
+  plain file at the project root with **no frontmatter and no gate** — it is not one of
+  the agent leave-offs in `leave-offs/` and the hooks never read it.
 - **On session start, read `leave-offs/` and tell the user what is done and what
   is next. Do not wait to be asked.**
 - **Also on session start, check today's date and report the days remaining until the
