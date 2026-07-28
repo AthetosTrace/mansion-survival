@@ -52,13 +52,24 @@ flowchart TD
 ## The crew (one specialist at a time)
 | Agent | Tools (allowlist) | Consumes | Produces |
 |-------|-------------------|----------|----------|
-| **designer** | Read, Write, WebSearch | `project-brief.md` | `design-brief.md` |
+| **designer** | Read, Write, Edit, WebSearch | `project-brief.md` | `design-brief.md` + `design/` sections |
 | **developer** | Read, Write, Edit | `design-brief.md` | `build-sequence.md` |
 | **inspector** | Read, Write | `design-brief.md` + `build-sequence.md` | `inspection.md` |
 
 The developer has **no WebSearch on purpose** — it must consume the designer's
 brief rather than research a version of its own. Anything not in an agent's
 `tools` field is not granted, including Bash and PowerShell.
+
+**Change on the record — 27 July 2026: the designer gained `Edit`.** It previously
+had only Read/Write/WebSearch, so it could create a file but never modify one, and
+every revision to `design-brief.md` meant rewriting the whole document from scratch.
+With `Edit` it can revise a section in place. Two related instruction changes landed
+with it: a **research budget** of roughly fifteen WebSearch sources per run (one
+earlier unbounded run consumed an entire usage allowance), with findings written to
+disk as it goes rather than held to the end; and a **new output shape** — long
+output goes into section files under `design/`, with `design-brief.md` kept as a
+short linking index. The output-shape rule applies to future work only; the existing
+brief was deliberately left unrestructured.
 
 ## The gates
 Each agent writes `leave-offs/<name>.md` when it finishes, with YAML frontmatter
