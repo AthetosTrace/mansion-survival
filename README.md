@@ -17,7 +17,9 @@ one specialist at a time:
 
 - **Designer** — reads the project brief (distilled from the GDD) and researches how
   this game's systems (scent-driven AI, behavior trees, nav mesh, safe havens, puzzle
-  framework) are built in Unreal → produces `design-brief.md`.
+  framework) are built in Unreal → produces `design-brief.md` as a short index over
+  section files in `design/`. Its research is capped at roughly fifteen sources per
+  run, written to disk as it goes.
 - **Developer** — turns that brief into an ordered, buildable sequence of Unreal
   editor paths and Blueprint node names → produces `build-sequence.md`.
 - **Inspector** — verifies every build step traces back to a decision in the design
