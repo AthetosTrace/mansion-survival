@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git --no-pager diff --stat .claude/settings.local.json)",
+      "Bash(git --no-pager diff .claude/settings.local.json)"
     ]
   }
 }
