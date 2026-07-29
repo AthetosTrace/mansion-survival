@@ -1,4 +1,4 @@
-# Capstone Werewolf — Napoleonic Gothic Survival-Horror (working title TBD)
+# Capstone Werewolf — Napoleonic Gothic Survival-Horror (working title The Beast of Vargovia)
 
 **The game this crew is built for:** a PC / Unreal Engine survival-horror set in
 Napoleonic-era Gothic France. The player is trapped in a sealed mansion or castle
